@@ -10,3 +10,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Temp folder
+.idea/

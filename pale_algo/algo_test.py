@@ -117,6 +117,26 @@ class DFSTest(unittest.TestCase):
     def test_invalid_graph(self):
         self.assertRaises(KeyError, algo.dfs, invalid_graph, 0)
 
+class BFSTest(unittest.TestCase):
+    def test_trees(self):
+        self.assertListEqual(algo.bfs(graph0, 0), [0, 1, 2, 3, 4, 5, 6, 7, 8])
+        self.assertListEqual(algo.bfs(graph1, 0), [0, 1, 2, 3, 4, 5, 6, 7, 8])
+
+    def test_cycle_graph(self):
+        self.assertListEqual(algo.bfs(cycle_graph, 0), [0, 1, 2, 3, 4, 5, 6, 7, 8])
+
+    def test_one_node_graph(self):
+        self.assertListEqual(algo.bfs(one_node_graph, 17), [17])
+
+    def test_empty_graph(self):
+        self.assertListEqual(algo.bfs(empty_graph, 0), [])
+
+    def test_disconnected_graph(self):
+        self.assertListEqual(algo.bfs(disconnected_graph, 0), [0, 1, 2, 3, 4, 6, 7])
+
+    def test_invalid_graph(self):
+        self.assertRaises(KeyError, algo.bfs, disconnected_graph, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

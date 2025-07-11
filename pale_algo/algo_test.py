@@ -117,6 +117,7 @@ class DFSTest(unittest.TestCase):
     def test_invalid_graph(self):
         self.assertRaises(KeyError, algo.dfs, invalid_graph, 0)
 
+
 class BFSTest(unittest.TestCase):
     def test_trees(self):
         self.assertListEqual(algo.bfs(graph0, 0), [0, 1, 2, 3, 4, 5, 6, 7, 8])
@@ -135,7 +136,7 @@ class BFSTest(unittest.TestCase):
         self.assertListEqual(algo.bfs(disconnected_graph, 0), [0, 1, 2, 3, 4, 6, 7])
 
     def test_invalid_graph(self):
-        self.assertRaises(KeyError, algo.bfs, disconnected_graph, 0)
+        self.assertRaises(KeyError, algo.bfs, invalid_graph, 0)
 
 
 if __name__ == "__main__":
